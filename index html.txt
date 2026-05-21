@@ -188,7 +188,8 @@ const balance =
 
     document.getElementById("network").innerText =
       networkName;
-
+document.getElementById("balance").innerText =
+  Number(balance).toFixed(4) + " ETH";
     const walletTypeElement =
       document.getElementById("walletType");
 

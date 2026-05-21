@@ -131,6 +131,15 @@ async function connectWallet() {
     });
 
     const chainId = parseInt(chainIdHex, 16);
+const provider = new ethers.JsonRpcProvider(
+  "https://mainnet.base.org"
+);
+
+const balanceWei =
+  await provider.getBalance(address);
+
+const balance =
+  ethers.formatEther(balanceWei);
 
     let networkName = "Unknown";
 

@@ -115,6 +115,12 @@
   <div class="label">Gas Price</div>
   <div class="value" id="gas">-</div>
 </div>
+
+<div class="section">
+  <div class="label">Wallet Age</div>
+  <div class="value" id="walletAge">-</div>
+</div>
+
 <script>
 
 async function connectWallet() {

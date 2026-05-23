@@ -224,6 +224,9 @@ document.getElementById("balance").innerText =
 document.getElementById("gas").innerText =
   gasPrice + " GWEI";
 
+document.getElementById("basename").innerText =
+  basename;
+
 const walletTypeElement =
       document.getElementById("walletType");
 

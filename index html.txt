@@ -110,7 +110,11 @@
   <div class="label">ETH Balance</div>
   <div class="value" id="balance">-</div>
 </div>
-  
+
+  <div class="section">
+  <div class="label">Gas Price</div>
+  <div class="value" id="gas">-</div>
+</div>
 <script>
 
 async function connectWallet() {
@@ -142,6 +146,15 @@ const balanceWei =
 
 const balance =
   ethers.formatEther(balanceWei);
+
+const feeData =
+  await provider.getFeeData();
+
+const gasPrice =
+  ethers.formatUnits(
+    feeData.gasPrice,
+    "gwei"
+  );
 
     let networkName = "Unknown";
 
@@ -188,9 +201,14 @@ const balance =
 
     document.getElementById("network").innerText =
       networkName;
+
 document.getElementById("balance").innerText =
   Number(balance).toFixed(4) + " ETH";
-    const walletTypeElement =
+   
+document.getElementById("gas").innerText =
+  gasPrice + " GWEI";
+
+const walletTypeElement =
       document.getElementById("walletType");
 
     walletTypeElement.innerText =
